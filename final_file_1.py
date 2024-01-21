@@ -48,7 +48,7 @@ model += lpSum(2 * mapping_var[area][vis] for (area,vis) in pairs)
 for area in area_list:
     model+= lpSum(15 * mapping_var[area][vis] for vis in visib_list) >= area_wise_demand[area] 
     for vis in visib_list:
-        model+= mapping_var[area][vis] >= mapping_var_binary[area][vis]
+        model+= mapping_var_binary[area][vis] >= mapping_var[area][vis] * 0.001
 model+= lpSum(mapping_var[area][4] for area in area_list) >=  4
 model+= lpSum(mapping_var[area][3] for area in area_list) >=  2
 solver = PULP_CBC_CMD(mip=True, msg=0, timeLimit=1200)
