@@ -71,7 +71,7 @@ import numpy as np
 from scipy.spatial import ConvexHull
 
 def plotter_fxn(stations, demand_df):
-    mapbox_api_token = "pk.eyJ1IjoicnV0dmlrZGVsaGl2ZXJ5IiwiYSI6ImNscGkzZDV6djBjajUyaXFxdnpyaDJqa3YifQ.e-hd9gQUo6l0ObHwAoUk2A"
+    mapbox_api_token = "INSERT_TOKEN_HERE"
     fig = go.Figure()
     for group, group_df in demand_df.groupby('area_name'):
         if len(group_df)<=2:
